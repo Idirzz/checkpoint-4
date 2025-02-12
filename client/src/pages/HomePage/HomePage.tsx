@@ -1,6 +1,6 @@
 import "./HomePage.css";
 
 function HomePage() {
-  return <div className="homepage-main-container">Ceci est la homepage</div>;
+  return <main className="homepage-main-container">Ceci est la homepage</main>;
 }
 export default HomePage;

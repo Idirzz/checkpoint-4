@@ -2,9 +2,9 @@ import "./CharacterPage.css";
 
 function CharacterPage() {
   return (
-    <div className="character-page-main-container">
+    <main className="character-page-main-container">
       Ceci est la page personnage
-    </div>
+    </main>
   );
 }
 export default CharacterPage;
