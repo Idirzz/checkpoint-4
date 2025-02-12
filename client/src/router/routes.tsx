@@ -1,5 +1,5 @@
-import CharacterPage from "../pages/CharacterPage/CharacterPage";
 import HomePage from "../pages/HomePage/HomePage";
+import MonsterPage from "../pages/MonsterPage/MonsterPage";
 import { monsterLoader } from "../services/Loaders/MonsterLoader";
 
 const routes = [
@@ -9,7 +9,7 @@ const routes = [
   },
   {
     path: "/monstre/:name",
-    element: <CharacterPage />,
+    element: <MonsterPage />,
     loader: monsterLoader,
   },
 ];
