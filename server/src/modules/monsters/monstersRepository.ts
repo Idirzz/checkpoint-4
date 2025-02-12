@@ -1,6 +1,6 @@
 import databaseClient from "../../../database/client";
 
-import type { Rows } from "../../../database/client";
+import type { Result, Rows } from "../../../database/client";
 import type { Monster } from "../../types/Monsters";
 
 class MonsterRepository {
@@ -17,6 +17,15 @@ class MonsterRepository {
     );
 
     return rows[0] as Monster;
+  }
+
+  async remove(id: string) {
+    const [Result] = await databaseClient.query<Result>(
+      "DELETE FROM monsters WHERE id = ?",
+      [id],
+    );
+
+    return Result.affectedRows;
   }
 }
 

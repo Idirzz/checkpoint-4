@@ -28,4 +28,19 @@ const read: RequestHandler = async (req, res, next) => {
   }
 };
 
-export default { browse, read };
+const remove: RequestHandler = async (req, res, next) => {
+  try {
+    const monsterId = req.params.id;
+    const monster = await monstersRepository.remove(monsterId);
+
+    if (!monster) {
+      res.sendStatus(404);
+    } else {
+      res.json(monster);
+    }
+  } catch (err) {
+    next(err);
+  }
+};
+
+export default { browse, read, remove };

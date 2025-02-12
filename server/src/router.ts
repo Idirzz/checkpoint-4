@@ -17,6 +17,7 @@ import monstersActions from "./modules/monsters/monstersActions";
 
 router.get("/monsters", monstersActions.browse);
 router.get("/monsters/:name", monstersActions.read);
+router.delete("/monsters/:id", monstersActions.remove);
 
 /* ************************************************************************* */
 
