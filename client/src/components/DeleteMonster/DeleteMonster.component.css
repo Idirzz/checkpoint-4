@@ -1,0 +1,12 @@
+.monster-details-container > button {
+  margin-top: 10px;
+  padding: 4px 8px;
+  background-color: #d64b4b;
+  cursor: pointer;
+  transition: transform 0.125s ease-in;
+  border-radius: 4px;
+}
+
+.monster-details-container > button:hover {
+  transform: scale(1.05);
+}
