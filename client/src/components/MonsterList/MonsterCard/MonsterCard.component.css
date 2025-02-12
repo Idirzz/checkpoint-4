@@ -1,5 +1,30 @@
 .monstercard-container {
   border-radius: 5px;
-  box-shadow: 1px 1px 6px 3px #c4b08a;
+  box-shadow: 0px 0px 4px 2px #c4b08a;
   padding: 10px 15px;
+  transition: transform 0.125s ease-in;
+}
+
+.monstercard-container:hover {
+  transform: scale(1.033);
+}
+
+@media (max-width: 260px) {
+  .homepage-content-container > h1 {
+    font-size: clamp(0.5em, 12vw, 1.33em);
+  }
+  .homepage-content-container > ul,
+  .monstercard-container {
+    width: 100%;
+  }
+
+  .homepage-content-container > ul > a {
+    width: 80%;
+  }
+  .monstercard-container > img {
+    width: 66%;
+  }
+  .monstercard-container > p {
+    font-size: 0.66em;
+  }
 }
