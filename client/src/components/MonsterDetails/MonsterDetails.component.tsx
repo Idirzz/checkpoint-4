@@ -1,10 +1,11 @@
+import DeleteMonster from "../DeleteMonster/DeleteMonster.component";
 import ResTable from "../ResTable/ResTable.component";
 import type { MonsterDetailsProps } from "./MonsterDetails";
 import "./MonsterDetails.component.css";
 
 function MonsterDetails({ data }: MonsterDetailsProps) {
   return (
-    <div className="MonsterDetails">
+    <div className="monster-details-container">
       <h1>{data.name}</h1>
       <img
         alt={data.name}
@@ -19,6 +20,7 @@ function MonsterDetails({ data }: MonsterDetailsProps) {
         </div>
       </div>
       <ResTable data={data.resists} />
+      <DeleteMonster data={data} />
     </div>
   );
 }
