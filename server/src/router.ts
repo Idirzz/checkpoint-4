@@ -13,6 +13,10 @@ router.get("/api/items", itemActions.browse);
 router.get("/api/items/:id", itemActions.read);
 router.post("/api/items", itemActions.add);
 
+import monstersActions from "./modules/monsters/monstersActions";
+
+router.get("/monsters", monstersActions.browse);
+
 /* ************************************************************************* */
 
 export default router;
