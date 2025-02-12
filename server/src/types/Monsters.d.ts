@@ -6,9 +6,11 @@ export interface Monster {
   health: number;
   action_points: number;
   movement_points: number;
-  res_neu: number;
-  res_fo: number;
-  res_ine: number;
-  res_cha: number;
-  res_age: number;
+  resists: {
+    neu: number;
+    fo: number;
+    ine: number;
+    cha: number;
+    age: number;
+  };
 }

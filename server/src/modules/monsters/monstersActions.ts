@@ -13,4 +13,19 @@ const browse: RequestHandler = async (req, res, next) => {
   }
 };
 
-export default { browse };
+const read: RequestHandler = async (req, res, next) => {
+  try {
+    const monsterName = req.params.name;
+    const monster = await monstersRepository.read(monsterName);
+
+    if (monster == null) {
+      res.sendStatus(404);
+    } else {
+      res.json(monster);
+    }
+  } catch (err) {
+    next(err);
+  }
+};
+
+export default { browse, read };

@@ -11,7 +11,6 @@ create table monsters (
   res_ine int not null,
   res_cha int not null,
   res_age int not null
-
 );
 
 insert into monsters(name, picture_name, family, health, action_points, movement_points, res_neu, res_fo, res_ine, res_cha, res_age)
