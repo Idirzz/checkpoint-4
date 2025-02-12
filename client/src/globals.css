@@ -15,3 +15,7 @@ main {
 ul {
   list-style: none;
 }
+
+.pointer {
+  cursor: pointer;
+}
