@@ -8,7 +8,7 @@ function Header() {
         <ul>
           <li>
             <Link to="/">
-              <button type="button">Acceuil</button>
+              <img alt="logo dofus" src="/images/logo.webp" />
             </Link>
           </li>
         </ul>
