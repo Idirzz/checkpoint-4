@@ -1,0 +1,42 @@
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.points-container > *,
+.stats-container > :first-child {
+  background-size: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.stats-container > :first-child {
+  height: 100px;
+  width: 100px;
+
+  background-image: url("/images/health.png");
+}
+
+.points-container {
+  margin-top: -20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.points-container > * {
+  height: 50px;
+  width: 50px;
+}
+
+.points-container > :first-child {
+  background-image: url("/images/PA.png");
+}
+
+.points-container > :last-child {
+  background-image: url("/images/PM.png");
+}
