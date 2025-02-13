@@ -1,10 +1,13 @@
 .monster-details-container > button {
   margin-top: 10px;
   padding: 4px 8px;
-  background-color: #d64b4b;
   cursor: pointer;
   transition: transform 0.125s ease-in;
   border-radius: 4px;
+}
+
+.delete-monster-button {
+  background-color: #d64b4b;
 }
 
 .monster-details-container > button:hover {
