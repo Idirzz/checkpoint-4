@@ -14,3 +14,18 @@ export interface Monster {
     age: number;
   };
 }
+
+export interface MonsterForm {
+  id: number;
+  picture_name: string;
+  name: string;
+  family: string;
+  health: number;
+  actionPoints: number;
+  movementPoints: number;
+  resNeu: number;
+  resFo: number;
+  resIne: number;
+  resCha: number;
+  resAge: number;
+}
