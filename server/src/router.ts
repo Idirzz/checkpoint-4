@@ -15,8 +15,9 @@ router.post("/api/items", itemActions.add);
 import monstersActions from "./modules/monsters/monstersActions";
 
 router.get("/monsters", monstersActions.browse);
-router.post("/monsters", monstersActions.add);
 router.get("/monsters/:name", monstersActions.read);
+router.post("/monsters", monstersActions.add);
+router.patch("/monsters/:id", monstersActions.update);
 router.delete("/monsters/:id", monstersActions.remove);
 
 /* ************************************************************************* */

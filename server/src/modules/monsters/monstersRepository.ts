@@ -51,6 +51,25 @@ class MonsterRepository {
 
     return Result.affectedRows;
   }
+
+  async update(monsterId: string, newValues: Partial<Monster>) {
+    const keys = Object.keys(newValues);
+    const values = Object.values(newValues);
+
+    if (keys.length === 0) {
+      throw new Error("Aucune valeur à mettre à jour");
+    }
+
+    const setClause = keys.map((key) => `${key} = ?`);
+
+    const query = `UPDATE monsters SET ${setClause} WHERE id = ?`;
+
+    const queryParams = [...values, monsterId];
+
+    const [result] = await databaseClient.query<Result>(query, queryParams);
+
+    return result.affectedRows;
+  }
 }
 
 export default new MonsterRepository();

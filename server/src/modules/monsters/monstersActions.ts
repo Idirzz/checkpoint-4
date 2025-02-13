@@ -76,4 +76,21 @@ const add: RequestHandler = async (req, res, next) => {
   }
 };
 
-export default { browse, read, remove, add };
+const update: RequestHandler = async (req, res, next) => {
+  try {
+    const affectedRows = await monstersRepository.update(
+      req.params.id,
+      req.body,
+    );
+
+    if (!affectedRows) {
+      res.sendStatus(404);
+    } else {
+      res.json({ affectedRows });
+    }
+  } catch (err) {
+    next(err);
+  }
+};
+
+export default { browse, read, remove, add, update };
