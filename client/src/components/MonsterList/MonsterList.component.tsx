@@ -3,6 +3,7 @@ import "./MonsterList.component.css";
 import { useEffect } from "react";
 import type { Monster } from "../../types/Monster";
 import Loader from "../Loader/Loader.component";
+import CreationCard from "./CreationCard/CreationCard.component";
 import MonsterCard from "./MonsterCard/MonsterCard.component";
 
 function MonsterList() {
@@ -23,6 +24,7 @@ function MonsterList() {
           {data.map((el) => (
             <MonsterCard key={el.name} data={el} />
           ))}
+          <CreationCard />
         </ul>
       ) : (
         <div className="homepage-content-loader">
