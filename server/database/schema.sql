@@ -17,5 +17,5 @@ insert into monsters(name, picture_name, family, health, action_points, movement
 values
   ("Bouftou", "bouftou.png", "Bouftous", 170, 5, 4, 1, 11, -14, -9, -16),
   ("Piou Rouge", "piou_rouge.png", "Pious", 49, 3, 3, 0, 0, 25, 0, 0),
-  ("Bouftou2", "bouftou.png", "Bouftous", 170, 5, 4, 1, 11, -14, -9, -16),
-  ("Bouftou3", "bouftou.png", "Bouftous", 170, 5, 4, 1, 11, -14, -9, -16);
+  ("Craqueboule", "Craqueboule.png", "Craqueleurs", 170, 5, 4, 1, 11, -14, -9, -16),
+  ("Pichon clouque", "pichon.png", "Pichons", 170, 5, 4, 1, 11, -14, -9, -16);
