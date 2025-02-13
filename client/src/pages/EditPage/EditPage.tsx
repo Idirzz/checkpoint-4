@@ -9,7 +9,7 @@ function EditPage() {
   const data = useLoaderData() as Monster;
   const navigate = useNavigate();
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     const formData = new FormData(e.currentTarget);
     const newData = {
       name: formData.get("name"),
@@ -23,13 +23,21 @@ function EditPage() {
       res_cha: formData.get("resCha"),
       res_age: formData.get("resAge"),
     };
-    fetch(`${import.meta.env.VITE_API_URL}/monsters/${data.id}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newData),
-    });
-    toast.success(`Monstre ${newData.name} modifié`);
-    navigate("/");
+    const response = await fetch(
+      `${import.meta.env.VITE_API_URL}/monsters/${data.id}`,
+      {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newData),
+      },
+    );
+    if (response.ok) {
+      toast.success(`Monstre ${newData.name} modifié`);
+      navigate("/");
+    } else {
+      const result = await response.json();
+      toast.error(result.message);
+    }
   }
 
   return data ? (

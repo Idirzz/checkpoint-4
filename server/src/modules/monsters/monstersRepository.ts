@@ -60,6 +60,9 @@ class MonsterRepository {
       throw new Error("Aucune valeur à mettre à jour");
     }
 
+    if (values.some((value) => value === undefined || value === ""))
+      throw new Error("Un champ est vide ou absent");
+
     const setClause = keys.map((key) => `${key} = ?`);
 
     const query = `UPDATE monsters SET ${setClause} WHERE id = ?`;

@@ -88,8 +88,8 @@ const update: RequestHandler = async (req, res, next) => {
     } else {
       res.json({ affectedRows });
     }
-  } catch (err) {
-    next(err);
+  } catch (error) {
+    res.status(400).json({ message: (error as Error).message });
   }
 };
 
