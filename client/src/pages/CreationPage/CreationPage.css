@@ -1,0 +1,57 @@
+.creation-page-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.creation-page-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fae3b9;
+  width: 80%;
+  gap: 20px;
+  border-radius: 8px;
+  border: 2px solid #6b4b1b;
+  padding: 2.5% 5%;
+  text-align: center;
+}
+
+.carac-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 5px;
+}
+
+.carac-form-container > label > input {
+  margin-left: 6px;
+}
+
+.resists-form-container {
+  display: flex;
+  gap: 20px;
+}
+
+.resists-form-container > label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.resists-form-container > label > input {
+  width: 30px;
+  padding: 3px;
+  text-align: center;
+}
+
+.creation-page-content-container > input {
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.creation-page-content-container > input:hover {
+  transform: translate(-0.5px, -0.5px);
+}

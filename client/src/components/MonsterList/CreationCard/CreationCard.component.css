@@ -1,0 +1,8 @@
+.creationcard-container {
+  display: flex;
+}
+
+.create-monster-logo {
+  width: 128px;
+  height: 128px;
+}
