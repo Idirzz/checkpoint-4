@@ -1,9 +1,33 @@
 import databaseClient from "../../../database/client";
 
 import type { Result, Rows } from "../../../database/client";
-import type { Monster } from "../../types/Monsters";
+import type { Monster, MonsterForm } from "../../types/Monsters";
 
 class MonsterRepository {
+  async create(picture_name: string | undefined, insertedValues: MonsterForm) {
+    const query = `
+    INSERT INTO monsters 
+    (name, picture_name, family, health, action_points, movement_points, res_neu, res_fo, res_ine, res_cha, res_age) 
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  `;
+    const values = [
+      insertedValues.name,
+      picture_name,
+      insertedValues.family,
+      insertedValues.health,
+      insertedValues.actionPoints,
+      insertedValues.movementPoints,
+      insertedValues.resNeu,
+      insertedValues.resFo,
+      insertedValues.resIne,
+      insertedValues.resCha,
+      insertedValues.resAge,
+    ];
+
+    const [result] = await databaseClient.query<Result>(query, values);
+
+    return result.insertId;
+  }
   async readAll() {
     const [rows] = await databaseClient.query<Rows>("SELECT * FROM monsters");
 

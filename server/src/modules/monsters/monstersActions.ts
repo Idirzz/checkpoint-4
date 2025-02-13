@@ -1,4 +1,5 @@
 import type { RequestHandler } from "express";
+import type { MonsterForm } from "../../types/Monsters";
 
 // Import access to data
 import monstersRepository from "./monstersRepository";
@@ -43,4 +44,36 @@ const remove: RequestHandler = async (req, res, next) => {
   }
 };
 
-export default { browse, read, remove };
+const add: RequestHandler = async (req, res, next) => {
+  try {
+    // Extract the monster data from the request body
+    const newMonster: MonsterForm = req.body as MonsterForm;
+    let error = false;
+    if (!req.file) {
+      error = true;
+      res.status(400).json({ error: "Aucune image envoyée" });
+    }
+    if (
+      !error &&
+      (Object.keys(newMonster).length !== 10 ||
+        Object.values(newMonster).some((v) => v === "" || v === undefined))
+    ) {
+      error = true;
+      res.status(400).json({ error: "Un paramètre est vide ou pas envoyé" });
+    }
+    if (!error) {
+      // Create the monster
+      const insertId = await monstersRepository.create(
+        req.file?.filename,
+        newMonster,
+      );
+      // Respond with HTTP 201 (Created) and the ID of the newly inserted item
+      res.status(201).json({ insertId });
+    }
+  } catch (err) {
+    // Pass any errors to the error-handling middleware
+    next(err);
+  }
+};
+
+export default { browse, read, remove, add };

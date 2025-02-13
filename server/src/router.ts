@@ -1,5 +1,4 @@
 import express from "express";
-
 const router = express.Router();
 
 /* ************************************************************************* */
@@ -16,6 +15,7 @@ router.post("/api/items", itemActions.add);
 import monstersActions from "./modules/monsters/monstersActions";
 
 router.get("/monsters", monstersActions.browse);
+router.post("/monsters", monstersActions.add);
 router.get("/monsters/:name", monstersActions.read);
 router.delete("/monsters/:id", monstersActions.remove);
 
