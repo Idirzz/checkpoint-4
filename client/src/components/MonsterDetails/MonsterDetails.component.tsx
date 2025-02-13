@@ -1,4 +1,5 @@
 import DeleteMonster from "../DeleteMonster/DeleteMonster.component";
+import EditMonster from "../EditMonster/EditMonster.component";
 import ResTable from "../ResTable/ResTable.component";
 import type { MonsterDetailsProps } from "./MonsterDetails";
 import "./MonsterDetails.component.css";
@@ -21,6 +22,7 @@ function MonsterDetails({ data }: MonsterDetailsProps) {
       </div>
       <ResTable data={data.resists} />
       <DeleteMonster data={data} />
+      <EditMonster data={data} />
     </div>
   );
 }

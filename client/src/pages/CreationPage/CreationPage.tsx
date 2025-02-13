@@ -4,7 +4,6 @@ import MonsterForm from "./MonsterForm";
 
 function CreationPage() {
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
     const formData = new FormData(e.currentTarget);
     fetch(`${import.meta.env.VITE_API_URL}/monsters`, {
       method: "POST",
@@ -13,7 +12,11 @@ function CreationPage() {
   }
   return (
     <main className="creation-page-main-container">
-      <MonsterForm onSubmit={handleSubmit} />
+      <MonsterForm
+        onSubmit={handleSubmit}
+        title={"Créer un nouveau monstre"}
+        actionName="Créer"
+      />
     </main>
   );
 }
