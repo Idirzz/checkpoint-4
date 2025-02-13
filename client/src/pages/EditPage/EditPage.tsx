@@ -3,6 +3,7 @@ import type { Monster } from "../../types/Monster";
 import MonsterForm from "../CreationPage/MonsterForm";
 import "./EditPage.css";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function EditPage() {
   const data = useLoaderData() as Monster;
@@ -27,6 +28,7 @@ function EditPage() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newData),
     });
+    toast.success(`Monstre ${newData.name} modifié`);
     navigate("/");
   }
 

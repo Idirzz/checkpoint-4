@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./DeleteMonster.component.css";
+import { toast } from "react-toastify";
 import type { DeleteMonsterProps } from "./DeleteMonster";
 
 function DeleteMonster({ data }: DeleteMonsterProps) {
@@ -8,6 +9,7 @@ function DeleteMonster({ data }: DeleteMonsterProps) {
     fetch(`${import.meta.env.VITE_API_URL}/monsters/${data.id}`, {
       method: "delete",
     });
+    toast.success("Monstre supprimé");
   }
 
   return (

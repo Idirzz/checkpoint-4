@@ -1,5 +1,6 @@
 import type { FormEvent } from "react";
 import "./CreationPage.css";
+import { toast } from "react-toastify";
 import MonsterForm from "./MonsterForm";
 
 function CreationPage() {
@@ -9,6 +10,7 @@ function CreationPage() {
       method: "POST",
       body: formData,
     });
+    toast.success("Monstre créé avec succès");
   }
   return (
     <main className="creation-page-main-container">
